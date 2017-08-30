@@ -179,10 +179,3 @@ GROUP BY ProductId
 HAVING SUM(LineTotal) BETWEEN 100000 AND 150000
 ORDER BY [Sum] DESC
 --------------------
-
-
-
-
-
-
-
