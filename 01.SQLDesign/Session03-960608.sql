@@ -163,4 +163,24 @@ ON hr.BusinessEntityID = p.BusinessEntityID
 
 ORDER BY [Experience] DESC, [Age] DESC
 ---------------------------
+SELECT DATEADD(MONTH, -2, GETDATE())
+SELECT DATEADD(MINUTE, 5, GETDATE())
+SELECT DATEADD(MONTH, 6, DATEADD(YEAR, 2, GETDATE()))
+SELECT JobTitle,DATEADD(MONTH, 6, DATEADD(YEAR, 2, BirthDate))
+FROM HumanResources.Employee
+----------------------------
+SELECT DATEADD(YEAR, 2, '2010-10-10 10:52:36' )
+----------------------------
+SELECT hr.BusinessEntityId, p.FirstName, p.LastName, hr.JobTitle,
+DATEDIFF(YEAR, hr.BirthDate, GETDATE()) 'Age',
+DATEDIFF(YEAR, hr.HireDate, GETDATE()) 'Experience'
+FROM HumanResources.Employee hr
+INNER JOIN Person.Person p
+ON hr.BusinessEntityID = p.BusinessEntityID
+
+ORDER BY [Experience] DESC, [Age] DESC
+-----------------------------
+SELECT SWITCHOFFSET(SYSDATETIMEOFFSET(), '+05:30')
+-----------------------------
+SELECT TODATETIMEOFFSET(GETDATE(), '+04:30')
 
