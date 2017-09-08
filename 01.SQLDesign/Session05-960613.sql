@@ -112,3 +112,4 @@ GROUP BY c.Name, p.Name
 ) AS t
 WHERE [Rank] = 1
 
+-----------------------------
