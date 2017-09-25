@@ -1,0 +1,40 @@
+CREATE DATABASE Session11
+GO
+USE AdventureWorks2016CTP3
+GO
+CREATE TABLE Person.Student
+(
+	Id INT PRIMARY KEY
+)
+GO
+DROP DATABASE Session11
+GO
+CREATE DATABASE Session11
+GO
+USE Session11
+GO
+CREATE TABLE Product
+(
+	Id INT IDENTITY PRIMARY KEY,
+	Name NVARCHAR(50),
+	Quantity INT,
+	Cost INT,
+	SalePrice INT
+)
+GO
+INSERT INTO Product(Name, Quantity, Cost, SalePrice) 
+VALUES('Monitor', 10, 1000, 1200)
+GO
+CREATE TABLE Sales.Invoice
+(
+	Id INT PRIMARY KEY IDENTITY,
+	CustomerName NVARCHAR(50),
+	SubTotal INT
+)
+GO
+CREATE TABLE Sales.InvoiceRow
+(
+	Id INT PRIMARY KEY IDENTITY,
+	ProductId INT,
+	Quantity INT
+)

@@ -36,3 +36,17 @@ KILL 56
 GO
 BACKUP DATABASE Session10
 TO DISK = 'C:\Backups\Full-Session10.bak'
+GO
+CREATE TABLE Student
+(
+	Id INT PRIMARY KEY IDENTITY,
+	StudentCode VARCHAR(20) UNIQUE,
+	Name NVARCHAR(50),
+	Family NVARCHAR(50)
+)
+GO
+CREATE NONCLUSTERED INDEX IX_StudentName
+ON Student(Name)
+GO
+CREATE NONCLUSTERED INDEX IX_StudentFamily
+ON Student(Family)
