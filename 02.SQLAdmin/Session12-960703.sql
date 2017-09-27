@@ -48,4 +48,9 @@ SELECT Name, SalesPersonUser, 1 AS [fn_securitypredicateCustomer_result]
 FROM dbo.Customer
 WHERE SalesPersonUser = 'john'
 GO
+CREATE TABLE [Profile]
+(
+	Id INT PRIMARY KEY IDENTITY,
+	Name NVARCHAR(50)
+) ON OtherFiles
 
