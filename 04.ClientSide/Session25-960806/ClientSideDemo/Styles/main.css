@@ -1,0 +1,37 @@
+﻿@import url(../fonts/IranSans.css);
+/*
+*{
+    border: 1px solid #000000;
+    margin:10px;
+}
+*/
+body{
+    /*background-color:green;*/
+    text-align:justify;
+    direction:rtl;
+    font-family:'Iran Sans Web';
+    font-weight:400;
+}
+div
+{
+    background-color:#888888; /*!important;*/
+}
+.scientific{
+    border:5px solid red;
+    background-color:rgba(240,20,70,0.3) !important;
+}
+.news{
+    background-color:blue;
+    /*margin:50px 10px 100px 200px;*/
+    margin:50px auto;
+    padding:10px;
+    width:600px;
+    min-height:250px;
+    border:3px solid #000;
+    border-radius:8px;
+    color:#000;
+    font-size:15px;
+}
+#top{
+    background-color:red;
+}
