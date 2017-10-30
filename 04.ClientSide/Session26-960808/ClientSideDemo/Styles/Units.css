@@ -1,0 +1,13 @@
+﻿body{
+    margin:0;
+    font-size:20px;
+}
+div{
+    border:1px solid #000;
+    min-height:150px;
+}
+#d1{
+    width: 50vw;
+    height: 50vh;
+    font-size:1.2em;
+}

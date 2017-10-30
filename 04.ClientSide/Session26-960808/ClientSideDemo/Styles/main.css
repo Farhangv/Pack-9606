@@ -1,0 +1,9 @@
+﻿@import url(../fonts/IranSans.css);
+body{
+    direction:rtl;
+    font-family:'Iran Sans Web';
+}
+div
+{
+    background-color:#888888; /*!important;*/
+}

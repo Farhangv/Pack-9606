@@ -1,0 +1,66 @@
+﻿div{
+    min-width:200px;
+    min-height:200px;
+    border:1px solid #000;
+}
+body > div{
+    width:300px;
+    margin:20px auto;
+    border: 2px dashed blue;
+}
+body div{
+    margin:20px;
+    background-color:#00ff21;
+}
+
+#first-main-block .second,
+#first-main-block .third{
+    background-color:blue;
+}
+body > div{
+    float:right;
+}
+.top+.second{
+    background-color:red;
+}
+.second[title]
+{
+    background-color:aqua !important;
+}
+a{
+    display:block;
+    text-decoration:none;
+    font-size:1.2em;
+    border:1px solid #000;
+    margin:5px;
+    padding:5px;
+}
+a[href*="www.kahkeshan.com"]{
+    background-color:orange;
+}
+a[href^="https"]{
+    border-right: 5px solid blue;
+}
+a, a:visited{
+    color:#333;
+}
+a:hover{
+    background-color:#bbb;
+    font-weight:700;
+    border:2px dashed #000;
+}
+/*a:first-child{
+    background-color:red !important;
+}
+a:last-child{
+    background-color:blue !important;
+}*/
+a:nth-child(2n+1)
+{
+    background-color:gray;
+}
+a[href*="www.kahkeshan.com"]::after{
+    content:"سایت کهکشان";
+    font-size:0.5em;
+    color:red;
+}

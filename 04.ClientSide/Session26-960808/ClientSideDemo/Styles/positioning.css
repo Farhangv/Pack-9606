@@ -1,0 +1,29 @@
+﻿div{
+    border: 1px solid #000;
+}
+.main-block{
+    position:static;
+    right:60px;
+    top:50px;
+    min-height:800px;
+    margin:70px;
+}
+.inner-block{
+    width:200px;
+    height:200px;
+}
+#first-block{
+    position:relative;
+    right:10px;
+    top:50px;
+}
+#second-block{
+    position:absolute;
+    right:10px;
+    top:50px;
+}
+#third-block{
+    position:fixed;
+    right:100px;
+    top:0;
+}
