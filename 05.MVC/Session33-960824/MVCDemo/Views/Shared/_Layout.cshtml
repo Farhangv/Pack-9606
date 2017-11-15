@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>وبسایت نمونه | @ViewBag.Title</title>
+    <link href="~/Content/bootstrap-rtl.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme-rtl.css" rel="stylesheet" />
+    <link href="~/Styles/main.css" rel="stylesheet" />
+</head>
+<body>
+    <header id="main-header">
+
+    </header>
+    <nav class="navbar navbar-inverse container">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">وبسایت نمونه</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">خانه</a></li>
+                <li><a href="#">عضویت</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="container" id="main-section">
+        <aside class="col-md-3">
+
+        </aside>
+        <article class="col-md-9">
+            <header>
+                <h2>@ViewBag.Title</h2>
+            </header>
+            <section>
+                @RenderBody()
+            </section>
+        </article>
+    </section>
+    <footer class="container-fluid">
+
+    </footer>
+    <script src="~/Scripts/jquery-1.12.4.js"></script>
+    <script src="~/Scripts/bootstrap-rtl.js"></script>
+</body>
+</html>

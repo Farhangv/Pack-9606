@@ -1,0 +1,29 @@
+﻿@import url(../fonts/IranSans.css);
+body{
+    direction:rtl;
+    font-family:'Iran Sans Web';
+}
+@media (min-width: 768px) {
+    .navbar > .container .navbar-brand,
+    .navbar > .container-fluid .navbar-brand {
+        margin-left: 0;
+        margin-right:-15px;
+    }
+}
+header#main-header{
+    height:50px;
+}
+
+aside{
+    border-left:1px #808080 solid;
+    min-height:200px;
+}
+footer{
+    min-height:200px;
+    background-color: #212020;
+    margin-top:50px;
+    border-top:3px #808080 solid;
+}
+#main-section{
+    min-height:400px;
+}

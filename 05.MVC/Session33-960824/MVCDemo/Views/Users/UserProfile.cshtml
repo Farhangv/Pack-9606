@@ -1,0 +1,55 @@
+﻿@model MVCDemo.Models.User
+@{
+    Layout = null;
+    //var programmingLanguages = (List<string>)ViewBag.ProgrammingLanguages;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>پروفایل کاربر | @Model.Name @Model.Family</title>
+    <link href="~/Content/bootstrap-rtl.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme-rtl.css" rel="stylesheet" />
+    <link href="~/Styles/main.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container" style="margin-top:60px;">
+
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>نام</th>
+                            <td>@Model.Name</td>
+                        </tr>
+                        <tr>
+                            <th>نام خانوادگی</th>
+                            <td>@Model.Family</td>
+                        </tr>
+                        <tr>
+                            <th>محل زندگی</th>
+                            <td>@Model.Location</td>
+                        </tr>
+                        <tr>
+                            <th>غذای مورد علاقه</th>
+                            <td>@Model.FavoriteFood</td>
+                        </tr>
+                        <tr>
+                            <th>رنگ چشم</th>
+                            <td>@Model.EyeColor</td>
+                        </tr>
+                        <tr>
+                            <th>زبان های برنامه نویسی</th>
+                            <td>@(string.Join(" , ",Model.ProgrammingLanguages))</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <script src="~/Scripts/jquery-1.12.4.js"></script>
+</body>
+</html>

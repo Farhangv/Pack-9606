@@ -1,0 +1,54 @@
+﻿
+@{
+    Layout = null;
+    //هر کد مجاز سی شارپ
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RazorDemo</title>
+</head>
+<body>
+    <div> 
+        @{ 
+            string name = "john";
+            var family = "doe";
+            <text>@family</text>
+            var names = new List<string>()
+            {
+                "C#",
+                "Java",
+                "PHP",
+                "Python"
+            };
+        }
+        <br/>
+        @name @family
+        <br/>
+        Current Date and Time is:
+        <br/>
+        @DateTime.Now
+        <br/>
+        <h3>Programming Languages</h3>
+        <ol>
+            @for (int i = 0; i < names.Count; i++)
+            {
+                <li>@names[i]</li>
+            }
+        </ol>
+        <table>
+            @foreach (var item in names)
+            {
+                <tr>
+                    <td>@item</td>
+                </tr>
+            }
+        </table>
+        farhangv@live.com
+        @@farhangv
+    </div>
+</body>
+</html>
