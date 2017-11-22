@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Tours.Models.Employee>
+@{
+    ViewBag.Title = "لیست پرسنل";
+}
+
+<div class="col-md-12" style="margin-bottom:30px;">
+    <a href="/Employees/Create" class="btn btn-success btn-sm pull-left">
+        <span class="glyphicon glyphicon-plus"></span>
+        افزودن پرسنل جدید
+    </a>
+</div>
+
+<table class="table table-hover table-bordered table-stripped">
+    <thead>
+        <tr>
+            <th>نام</th>
+            <th>نام خانوادگی</th>
+            <th>نام کاربری</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@employee.Name</td>
+                <td>@employee.Family</td>
+                <td>@employee.Username</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
