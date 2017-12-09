@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>سرخوشان | @ViewBag.Title</title>
+    <link href="~/Content/bootstrap-rtl.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme-rtl.css" rel="stylesheet" />
+    <link href="~/Content/main.css" rel="stylesheet" />
+
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">سرخوشان</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="@Url.Action("Index", "Home")">خانه</a></li>
+                <li><a href="@Url.Action("Index", "Employees")">مدیریت پرسنل</a></li>
+                <li><a href="@Url.Action("Index", "Passengers")">مدیریت مسافران</a></li>
+                <li><a href="@Url.Action("Index", "TourPackages")">مدیریت تورها</a></li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-left">
+                <li class="active">پیام پیامی</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div id="main-container" class="container">
+        @if (TempData["Message"] != null)
+        {
+        <div id="message" class="alert alert-info">
+            @TempData["Message"]
+        </div>
+        }
+        <div class="row">
+            <div class="col-md-12">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-1.12.4.js"></script>
+    <script src="~/Scripts/bootstrap-rtl.js"></script>
+    <script src="~/Scripts/scripts.js"></script>
+</body>
+</html>

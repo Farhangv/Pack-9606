@@ -1,0 +1,39 @@
+﻿@model Tours.Models.Employee
+@{
+    ViewBag.Title = "ایجاد پرسنل جدید";
+}
+
+<form method="post" class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Name">نام</label> 
+        <div class="col-md-10">
+            <input type="text" name="Name" id="Name" placeholder="نام" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Family">نام خانوادگی</label>
+        <div class="col-md-10">
+            <input type="text" name="Family" id="Family" placeholder="نام خانوادگی" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Username">نام کاربری</label>
+        <div class="col-md-10">
+            <input type="text" name="Username" id="Username" placeholder="نام کاربری" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="PasswordHash">کلمه عبور</label>
+        <div class="col-md-10">
+            <input type="password" name="PasswordHash" id="PasswordHash" placeholder="کلمه عبور" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-success btn-sm pull-left" type="submit">
+            <span class="glyphicon glyphicon-save"></span>
+            ذخیره 
+        </button>
+    </div>
+</form>
+

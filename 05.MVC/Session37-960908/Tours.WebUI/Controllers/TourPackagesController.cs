@@ -7,9 +7,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Tours.Models;
+using Tours.WebUI.Library;
 
 namespace Tours.WebUI.Controllers
 {
+    [AuthorizeEmployee]
     public class TourPackagesController : Controller
     {
         private ToursDb ctx = new ToursDb();

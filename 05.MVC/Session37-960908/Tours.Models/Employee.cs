@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tours.Models.Library;
 
 namespace Tours.Models
 {
@@ -13,9 +14,16 @@ namespace Tours.Models
     {
         [MaxLength(50), Required, Index(IsUnique = true)]
         public string Username { get; set; }
-        [NotMapped]
-        public string Password { get; set; }
-        [MaxLength(100)]
+        [NotMapped, ScaffoldColumn(true)]
+        public string Password {
+            get {
+                return this.PasswordHash;
+            }
+                set {
+                this.PasswordHash = UserHelper.CalculateMD5Hash(value);
+            }
+        }
+        [MaxLength(100), ScaffoldColumn(false)]
         public string PasswordHash { get; set; }
     }
 }

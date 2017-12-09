@@ -1,0 +1,22 @@
+﻿@model Tours.Models.Employee
+@{
+    ViewBag.Title = "حذف کارمند";
+}
+
+<h2 class="text-danger">آیا از حذف این رکورد اطمینان دارید؟</h2>
+<dl>
+    <dt>نام</dt>
+    <dd>@Model.Name</dd>
+
+    <dt>نام خانوادگی</dt>
+    <dd>@Model.Family</dd>
+</dl>
+<form method="post">
+    <input type="hidden" value="@Model.Id" name="Id" />
+    <a href="@Url.Action("Index")" class="btn btn-sm btn-default">انصراف</a>
+
+    <button class="btn btn-danger btn-sm">
+        تایید 
+        <span class="glyphicon glyphicon-remove"></span>
+    </button>
+</form>

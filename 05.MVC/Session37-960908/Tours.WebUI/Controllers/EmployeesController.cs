@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Tours.Models;
+using Tours.WebUI.Library;
 
 namespace Tours.WebUI.Controllers
 {
@@ -11,20 +13,19 @@ namespace Tours.WebUI.Controllers
     {
         protected ToursDb ctx { get; set; } = new ToursDb();
 
-
+        [AuthorizeEmployee]
         public ActionResult Index()
         {
-            //ToursDb ctx = new ToursDb();
             var employees = ctx.Employees.ToList();
             return View(employees);
         }
-
+        [AuthorizeEmployee]
         public ActionResult Create()
         {
             return View();
         }
 
-        [HttpPost]
+        [HttpPost,AuthorizeEmployee]
         public ActionResult Create(Employee employee)
         {
             //ToursDb ctx = new ToursDb();
@@ -34,6 +35,7 @@ namespace Tours.WebUI.Controllers
             TempData["Message"] = "کارمند مورد نظر با موفقیت افزوده شد";
             return RedirectToAction("Index");
         }
+        [AuthorizeEmployee]
         public ActionResult Edit(int id)
         {
             //ToursDb ctx = new ToursDb();
@@ -41,23 +43,11 @@ namespace Tours.WebUI.Controllers
             return View(employee);
         }
 
-        [HttpPost]
+        [HttpPost,AuthorizeEmployee]
         public ActionResult Edit(Employee employee)
         {
-            //ToursDb ctx = new ToursDb();
-            //Method1
-            //var dbEmployee = ctx.Employees.Find(employee.Id);
-            //dbEmployee.Name = employee.Name;
-            //dbEmployee.Family = employee.Family;
-            //dbEmployee.Username = employee.Username;
-            //if (!string.IsNullOrEmpty(employee.PasswordHash))
-            //    dbEmployee.PasswordHash = employee.PasswordHash;
-
-            //Method2
-            //ctx.Employees.Attach(employee);
             ctx.Entry<Employee>(employee).State = System.Data.Entity.EntityState.Modified;
             if (string.IsNullOrEmpty(employee.PasswordHash))
-                //ctx.Entry<Employee>(employee).Property("PasswordHash").IsModified = false;
                 ctx.Entry<Employee>(employee).Property(nameof(employee.PasswordHash)).IsModified = false;
 
             ctx.SaveChanges();
@@ -65,7 +55,7 @@ namespace Tours.WebUI.Controllers
             TempData["Message"] = "کارمند مورد نظر با موفقیت ویرایش شد";
             return RedirectToAction("Index");
         }
-
+        [AuthorizeEmployee]
         public ActionResult Delete(int id)
         {
             //ToursDb ctx = new ToursDb();
@@ -74,6 +64,7 @@ namespace Tours.WebUI.Controllers
 
         [HttpPost]
         [ActionName("Delete")]
+        [AuthorizeEmployee]
         public ActionResult DeleteConfirmed(int id)
         {
             //ToursDb ctx = new ToursDb();

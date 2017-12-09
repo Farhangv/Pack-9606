@@ -1,0 +1,71 @@
+﻿@model Tours.WebUI.ViewModels.PassengersCreateViewModel
+@{
+    ViewBag.Title = "تعریف مسافر جدید";
+}
+
+@using (Html.BeginForm("Create", "Passengers", FormMethod.Post,
+                new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control",
+                placeholder = "نام" })
+            @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Family, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Family, new
+       {
+           @class = "form-control",
+           placeholder = "نام خانوادگی"
+       })
+            @Html.ValidationMessageFor(m => m.Family, "", new { @class = "text-danger" })
+
+
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.NationalCode, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.NationalCode, new
+       {
+           @class = "form-control",
+           placeholder = "کد ملی"
+       })
+            @Html.ValidationMessageFor(m => m.NationalCode, "", new { @class = "text-danger" })
+
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.PassportNumber, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.PassportNumber, new
+       {
+           @class = "form-control",
+           placeholder = "شماره پاسپورت"
+       })
+            @Html.ValidationMessageFor(m => m.PassportNumber, "", new { @class = "text-danger" })
+
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.PhotoFile, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            <input type="file" id="PhotoFile" name="PhotoFile" class="form-control" />
+            @*@Html.TextBoxFor(, new { type = "file" })*@
+            @Html.ValidationMessageFor(m => m.PhotoFile, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-sm btn-success pull-left" type="submit">
+            <span class="glyphicon glyphicon-save"></span>
+            ذخیره
+        </button>
+    </div>
+}
+

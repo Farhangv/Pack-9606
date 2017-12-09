@@ -54,6 +54,7 @@
     <Compile Include="Contact.cs" />
     <Compile Include="ContactType.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="Library\UserHelper.cs" />
     <Compile Include="Migrations\201711250954149_init.cs" />
     <Compile Include="Migrations\201711250954149_init.Designer.cs">
       <DependentUpon>201711250954149_init.cs</DependentUpon>

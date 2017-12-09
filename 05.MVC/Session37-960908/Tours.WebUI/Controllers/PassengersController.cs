@@ -4,9 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Tours.Models;
+using Tours.WebUI.Library;
 
 namespace Tours.WebUI.Controllers
 {
+    [AuthorizeEmployee]
     public class PassengersController : Controller
     {
         protected ToursDb ctx { get; set; } = new ToursDb();
